@@ -15,6 +15,14 @@
     EJS_gameUrl ='aslskks.github.io/black/pokemon_black.nds';
     EJS_core = 'nds';
 
+    window.EJS_ready = function() {
+        console.log('El emulador está listo.');
+      };
+  
+      window.EJS_onGameStart = function() {
+        console.log('El juego ha comenzado.');
+      };
+
 
     // Variables para almacenar el estado del joystick
     let ejeX = 0;
