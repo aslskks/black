@@ -1,26 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1ZCLH6XCR"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-R1ZCLH6XCR');
-    </script>
-    <title>Pokemon Black</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emulador de Nintendo DS</title>
 </head>
-
 <body>
-    <div style="width:100%;height:100%">
-        <div id="game"></div>
-    </div>
-
-    <script type="text/javascript">
-        EJS_player = '#game';
-        EJS_core = 'desmume2015';  // Cambia aquí según el núcleo necesario
-        EJS_biosUrl = '';  // URL del BIOS si es necesario
-        EJS_gameUrl = 'pokemon_black.nds';  // URL de la ROM
-        EJS_pathtodata = 'https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/';
-    </script>
-    <script src="https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/loader.js"></script>
+  <div id="emulator-container"></div>
+  
+  <script src="https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/loader.js"></script>
+  <script>
+    EJS_player = '#emulator-container';
+    EJS_biosUrl = 'https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/';
+    EJS_gameUrl ='aslskks.github.io/black/pokemon_black.nds';
+    EJS_core = 'nds';
+    EJS_start();
+  </script>
 </body>
+</html>
