@@ -15,6 +15,40 @@
     EJS_gameUrl ='aslskks.github.io/black/pokemon_black.nds';
     EJS_core = 'nds';
     EJS_start();
+
+
+    // Variables para almacenar el estado del joystick
+    let ejeX = 0;
+    let ejeY = 0;
+
+    function actualizarEjes() {
+      console.log(`Eje X: ${ejeX.toFixed(2)}, Eje Y: ${ejeY.toFixed(2)}`);
+      // Aquí puedes mapear el valor de los ejes al control del emulador
+    }
+
+    function detectarJoystick() {
+      const gamepads = navigator.getGamepads();
+      const proController = gamepads[0]; // Suponiendo que es el primer controlador conectado
+
+      if (proController) {
+        // Ejes del joystick izquierdo en el Switch Pro Controller (ejes 0 y 1)
+        ejeX = proController.axes[0];
+        ejeY = proController.axes[1];
+        actualizarEjes();
+      }
+    }
+
+    // Verifica los cambios en el joystick cada 100 ms
+    setInterval(detectarJoystick, 100);
+
+    // Opcional: Detecta conexión y desconexión de controladores
+    window.addEventListener("gamepadconnected", (event) => {
+      console.log("Switch Pro Controller conectado:", event.gamepad);
+    });
+
+    window.addEventListener("gamepaddisconnected", (event) => {
+      console.log("Switch Pro Controller desconectado:", event.gamepad);
+    });
   </script>
 </body>
 </html>
